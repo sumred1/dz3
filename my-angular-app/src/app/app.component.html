@@ -1,0 +1,33 @@
+<div id="box">
+  <h1>Personal info</h1>
+  <div id="flex">
+    <app-image-for-personal-info>
+    </app-image-for-personal-info>
+    <div id="work">
+      <p>About Work:</p><br>
+      {{InfoAboutWork}}
+      <hr>
+      <app-serfiticats></app-serfiticats>
+    </div>
+  </div>
+  <div>
+    <app-other-info></app-other-info>
+<!-- --------проверка нг иф, так как я не знаю какой пример тут можно сделать =) --- -->
+    <div *ngIf = "true">
+      <p>проверка ngIf (должно выводиться)</p>
+    </div>
+    <div *ngIf = "false">
+      <p>проверка ngIf (не должно выводиться)</p>
+    </div>
+<!-- -----проверка свитч кейсов---------- -->
+<ng-container *ngFor="let item of texts">
+  <li [ngSwitch] = "item.type">
+
+      <span *ngSwitchCase = "'bold'"><b>hello world</b></span>
+      <span *ngSwitchCase = "'italic'"><i>hello world</i></span>
+      <span *ngSwitchDefault><span>default</span></span>
+
+  </li>
+</ng-container>
+  </div>
+</div>
